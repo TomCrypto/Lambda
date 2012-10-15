@@ -56,6 +56,10 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 - More of everything else
 - ...
 
+## How to build
+
+There is a Code::Blocks project included, but if you don't want to use that, I haven't done a Makefile yet. To compile, you don't need anything special, but if you want to use OpenMP for multithreading, you'll need to link to the "gomp" library and pass the -fopenmp flag to your compiler.
+
 ## How to use
 
 Lambda works on the basis of "scene files", which contain everything needed to render a given scene. These need to follow a certain format, which is fairly obvious to work out if you look at the loading code. I provide some sample scene files in the repository, though some of them are necessarily quite large due to the amount of triangles required. You can also create your own scenes, I intend to provide helper functions to ease this task later on.
