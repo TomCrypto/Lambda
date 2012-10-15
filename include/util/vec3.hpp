@@ -1,3 +1,5 @@
+// from https://github.com/brandonpelfrey/Fast-BVH
+
 #ifndef VEC3_H
 #define VEC3_H
 

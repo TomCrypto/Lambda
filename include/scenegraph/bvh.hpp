@@ -1,3 +1,5 @@
+// from https://github.com/brandonpelfrey/Fast-BVH
+
 #ifndef BVH_h
 #define BVH_h
 

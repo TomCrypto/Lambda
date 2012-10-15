@@ -1,3 +1,5 @@
+// from https://github.com/brandonpelfrey/Fast-BVH
+
 #include <algorithm>
 #include <scenegraph/bvh.hpp>
 #include <limits>

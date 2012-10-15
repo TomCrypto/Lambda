@@ -1,3 +1,5 @@
+// from https://github.com/brandonpelfrey/Fast-BVH
+
 #ifndef BBox_h
 #define BBox_h
 
