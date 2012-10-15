@@ -1,0 +1,4 @@
+# Never include compiled binaries nor documentation
+bin/
+obj/
+doc/

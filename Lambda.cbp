@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Lambda" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/debug/Lambda" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/release/Lambda" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++0x" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-fopenmp" />
+			<Add directory="./include/" />
+		</Compiler>
+		<Linker>
+			<Add library="gomp" />
+		</Linker>
+		<Unit filename="include/cameras/camera.hpp" />
+		<Unit filename="include/cameras/perspective.hpp" />
+		<Unit filename="include/lights/light.hpp" />
+		<Unit filename="include/lights/omni.hpp" />
+		<Unit filename="include/materials/diffuse.hpp" />
+		<Unit filename="include/materials/frostedglass.hpp" />
+		<Unit filename="include/materials/material.hpp" />
+		<Unit filename="include/materials/smoothglass.hpp" />
+		<Unit filename="include/materials/specular.hpp" />
+		<Unit filename="include/primitives/primitive.hpp" />
+		<Unit filename="include/primitives/sphere.hpp" />
+		<Unit filename="include/primitives/triangle.hpp" />
+		<Unit filename="include/renderer/renderer.hpp" />
+		<Unit filename="include/scenegraph/bvh.hpp" />
+		<Unit filename="include/spectral/blackbody.hpp" />
+		<Unit filename="include/spectral/distribution.hpp" />
+		<Unit filename="include/spectral/flat.hpp" />
+		<Unit filename="include/spectral/peak.hpp" />
+		<Unit filename="include/spectral/sellmeier.hpp" />
+		<Unit filename="include/util/aabb.hpp" />
+		<Unit filename="include/util/cie.hpp" />
+		<Unit filename="include/util/rtmath.hpp" />
+		<Unit filename="include/util/vec3.hpp" />
+		<Unit filename="src/cameras/camera.cpp" />
+		<Unit filename="src/cameras/perspective.cpp" />
+		<Unit filename="src/lights/light.cpp" />
+		<Unit filename="src/lights/omni.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/materials/diffuse.cpp" />
+		<Unit filename="src/materials/frostedglass.cpp" />
+		<Unit filename="src/materials/material.cpp" />
+		<Unit filename="src/materials/smoothglass.cpp" />
+		<Unit filename="src/materials/specular.cpp" />
+		<Unit filename="src/primitives/primitive.cpp" />
+		<Unit filename="src/primitives/sphere.cpp" />
+		<Unit filename="src/primitives/triangle.cpp" />
+		<Unit filename="src/renderer/renderer.cpp" />
+		<Unit filename="src/scenegraph/bvh.cpp" />
+		<Unit filename="src/spectral/blackbody.cpp" />
+		<Unit filename="src/spectral/distribution.cpp" />
+		<Unit filename="src/spectral/sellmeier.cpp" />
+		<Unit filename="src/util/aabb.cpp" />
+		<Unit filename="src/util/cie.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
