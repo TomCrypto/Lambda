@@ -15,13 +15,13 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 - Unidirectional path tracing with russian roulette
 - Spectral Distributions
 
--- Blackbody emission spectrum
+	Blackbody emission spectrum
 
--- Sellmeier refractive index
+	Sellmeier refractive index
 
--- "Flat" spectrum (which is usually used for a wavelength-independent spectral response)
+	"Flat" spectrum (which is usually used for a wavelength-independent spectral response)
 
--- "Peak" spectrum (which is basically a bell curve at some peak wavelength)
+	"Peak" spectrum (which is basically a bell curve at some peak wavelength)
 
 - Materials
 
