@@ -12,45 +12,45 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 
 ## Currently implemented:
 
-- unidirectional path tracing with russian roulette
-- various spectral distributions:
+- Unidirectional path tracing with russian roulette
+- Spectral Distributions
 
-  [+] blackbody emission spectrum
+  Blackbody emission spectrum
 
-  [+] sellmeier refractive index
+  Sellmeier refractive index
 
-  [+] "flat" spectrum (which is usually used for a wavelength-independent spectral response)
+  "Flat" spectrum (which is usually used for a wavelength-independent spectral response)
 
-  [+] "peak" spectrum (which is basically a bell curve at some peak wavelength)
+  "Peak" spectrum (which is basically a bell curve at some peak wavelength)
 
-- some materials
+- Materials
 
-  [+] lambertian diffuse (importance-sampled)
+  Lambertian diffuse (importance-sampled)
 
-  [+] ideal specular (importance-sampled)
+  Ideal specular (importance-sampled)
 
-  [+] ideal refractive (importance-sampled, unfinished)
+  Ideal refractive (importance-sampled, unfinished)
 
-  [+] rough refractive (not quite physically correct, unfinished)
+  Rough refractive (not quite physically correct, unfinished)
 
-- lights
+- Lights
 
-  [+] omni light (i.e. isotropic emittance)
+  Omni light (i.e. isotropic emittance)
 
-- primitives
+- Primitives
 
-  [+] spheres
+  Spheres
 
-  [+] triangles
+  Triangles
 
-- scalable multithreading via OpenMP
-- robust pseudorandom number generation (C++11 mersenne twister)
-- very efficient bounding volume hierarchy acceleration structure (many thanks to [Brandon Pelfrey](https://github.com/brandonpelfrey))
+- Scalable multithreading via OpenMP
+- Robust pseudorandom number generation (C++11 mersenne twister)
+- Very efficient bounding volume hierarchy acceleration structure (many thanks to [Brandon Pelfrey](https://github.com/brandonpelfrey))
 
 ## Missing features
 
-- bidirectional path tracing
-- more distributions, materials, lights and primitives
+- Bidirectional path tracing
+- more of everything else
 - ...
 
 ## How to use
