@@ -15,33 +15,33 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 - Unidirectional path tracing with russian roulette
 - Spectral Distributions
 
-Blackbody emission spectrum
+    Blackbody emission spectrum
 
-Sellmeier refractive index
+    Sellmeier refractive index
 
-"Flat" spectrum (which is usually used for a wavelength-independent spectral response)
+    "Flat" spectrum (which is usually used for a wavelength-independent spectral response)
 
-"Peak" spectrum (which is basically a bell curve at some peak wavelength)
+    "Peak" spectrum (which is basically a bell curve at some peak wavelength)
 
 - Materials
 
-Lambertian diffuse (importance-sampled)
+    Lambertian diffuse (importance-sampled)
 
-Ideal specular (importance-sampled)
+    Ideal specular (importance-sampled)
 
-Ideal refractive (importance-sampled, unfinished)
+    Ideal refractive (importance-sampled, unfinished)
 
-Rough refractive (not quite physically correct, unfinished)
+    Rough refractive (not quite physically correct, unfinished)
 
 - Lights
 
-Omni light (i.e. isotropic emittance)
+    Omni light (i.e. isotropic emittance)
 
 - Primitives
 
-Spheres
+    Spheres
 
-Triangles
+    Triangles
 
 - Scalable multithreading via OpenMP
 - Robust pseudorandom number generation (C++11 mersenne twister)
