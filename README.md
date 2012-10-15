@@ -56,3 +56,15 @@ Triangles
 ## How to use
 
 Lambda works on the basis of "scene files", which contain everything needed to render a given scene. These need to follow a certain format, which is fairly obvious to work out if you look at the loading code. I provide some sample scene files in the repository, though some of them are necessarily quite large due to the amount of triangles required. You can also create your own scenes, I intend to provide helper functions to ease this task later on.
+
+## Where are the scenes files?
+
+There are some rather generic ones in the scenes/ folder. The other, high-detail ones, because of their large size, are located in the [Downloads](https://github.com/TomCrypto/Lambda/downloads) section of the repository in compressed form (7z).
+
+## Where is the result?
+
+Lambda produces its output in gamma-corrected, tone-mapped PPM format. If you are under Linux, you should be able to view it without issues. Under Windows, you can use any PPM reader, such as IrfanView or other (and you can then convert it to a PNG, for instance).
+
+## Compatibility
+
+Lambda is compatible with C++11 compliant compilers and uses only standard libraries. As such, it is portable, and has been tested under 64-bit Linux and 64-bit Windows.
