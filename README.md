@@ -5,7 +5,7 @@ Spectral Path Tracer
 --------------
 
 <p align="center">
-![Frosted Glass Dragon](https://github.com/TomCrypto/Lambda/blob/master/render/frosted_dragon.png)
+<img src="https://github.com/TomCrypto/Lambda/blob/master/render/frosted_dragon.png?raw=true" alt="Frosted Glass Dragon"/>
 </p>
 
 Lambda is a simple spectral path tracer, written in C++. Some parts of the code are still written in C and don't take advantage of C++ features for the moment. This is a work in progress as many features are still missing, but it is quite functional. Please note Lambda uses C++11 libraries, so you will need a compliant toolchain (for instance, GCC 4.6 and later).
