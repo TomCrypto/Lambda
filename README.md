@@ -43,6 +43,9 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 
     Triangles
 
+- Gamma correction
+- Reinhard tone-mapping
+- Multiple available color spaces
 - Scalable multithreading via OpenMP
 - Robust pseudorandom number generation (C++11 mersenne twister)
 - Very efficient bounding volume hierarchy acceleration structure (many thanks to [Brandon Pelfrey](https://github.com/brandonpelfrey))
@@ -50,7 +53,7 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 ## Missing features
 
 - Bidirectional path tracing
-- more of everything else
+- More of everything else
 - ...
 
 ## How to use
@@ -67,4 +70,4 @@ Lambda produces its output in gamma-corrected, tone-mapped PPM format. If you ar
 
 ## Compatibility
 
-Lambda is compatible with C++11 compliant compilers and uses only standard libraries. As such, it is portable, and has been tested under 64-bit Linux and 64-bit Windows.
+Lambda is compatible with C++11 compliant compilers and uses only standard libraries. As such, it is portable, and has been tested under 64-bit Linux and 64-bit Windows. Note the vector code requires SSE3 instructions, but you really should have those.
