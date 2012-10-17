@@ -98,7 +98,7 @@ void Renderer::TonemapRender(Vector* pixels)
     {
         /* Compute the luminance and add its logarithm to the sum. */
         float luminance = Luminance(pixels[t], colorSystem);
-        if (luminance > 0.0f) avgLuminance += log(luminance);
+        avgLuminance += log(luminance + EPSILON);
     }
 
     /* Get the log-average luminance. */
