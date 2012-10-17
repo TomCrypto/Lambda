@@ -47,6 +47,7 @@
 		<Unit filename="include/cameras/perspective.hpp" />
 		<Unit filename="include/lights/light.hpp" />
 		<Unit filename="include/lights/omni.hpp" />
+		<Unit filename="include/materials/cooktorrance.hpp" />
 		<Unit filename="include/materials/diffuse.hpp" />
 		<Unit filename="include/materials/frostedglass.hpp" />
 		<Unit filename="include/materials/material.hpp" />
@@ -71,6 +72,7 @@
 		<Unit filename="src/lights/light.cpp" />
 		<Unit filename="src/lights/omni.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/materials/cooktorrance.cpp" />
 		<Unit filename="src/materials/diffuse.cpp" />
 		<Unit filename="src/materials/frostedglass.cpp" />
 		<Unit filename="src/materials/material.cpp" />
