@@ -2,3 +2,10 @@
 bin/
 obj/
 doc/
+
+# Never include .ppm renders
+*.ppm
+
+# Code::Blocks temporary files
+*.layout
+*.depend

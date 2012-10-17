@@ -14,6 +14,7 @@
 #define ID_SPECULAR 1
 #define ID_SMOOTHGLASS 2
 #define ID_FROSTEDGLASS 3
+#define ID_COOKTORRANCE 4
 
 /* We need vectors, pseudorandom number generation, and spectral distributions. */
 #include <spectral/distribution.hpp>
