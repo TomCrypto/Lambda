@@ -91,18 +91,75 @@ Vector FrostedGlass::Sample(Vector* origin, Vector incident, Vector normal, floa
 /* This returns the reflectance for an incident and exitant vector. */
 float FrostedGlass::Reflectance(Vector incident, Vector exitant, Vector normal, float wavelength, bool sampled)
 {
-    /* If the exitant ray was importance sampled... */
-    if (sampled)
+    /* Work out the refractive indices. */
+    float n1, n2;
+    if (incident * normal)
     {
-        /* Then the result is just going to be 1. */
-        return 1.0f;
+        /* Incident and normal have the same direction, ray is inside the material. */
+        n1 = this->refractiveIndex->Lookup(wavelength);
+        n2 = 1.0f;
+
+        /* Flip the microfacet normal around. */
+        normal = ZERO - normal;
     }
     else
     {
-        /* Otherwise, use delta functions to decide whether the incident and exitant rays are coherent. */
-        // not done
-        return 1.0f;
+        /* Incident and normal have opposite directions, so the ray is outside the material. */
+        n2 = this->refractiveIndex->Lookup(wavelength);
+        n1 = 1.0f;
     }
+
+    /* Check whether reflection or refraction occurred. */
+    Vector H;
+    float D = 1.0f;
+    if (incident * exitant < 0.0f)
+    {
+        /* Reflection occurred, find the half-angle vector. */
+        H = normalize(exitant - incident);
+
+        /* If the ray was not importance-sampled, we need to take into account the distribution. */
+        if (!sampled)
+        {
+            /* Get the half angle vector's angle with the normal. */
+            float alpha = acos(H * normal);
+
+            /* Compute the Beckmann distribution. */
+            D = exp(-pow(tanf(alpha) / this->roughness, 2.0f));
+        }
+    }
+    else
+    {
+        /* Refraction occurred, we have to find the microfacet normal. */
+        float cI = std::abs(incident * normal);
+        float cT = 1.0f - pow(n1 / n2, 2.0f) * (1.0f - pow(cI, 2.0f));
+        H = (incident * (n1 / n2) - exitant) / ((n1 / n2) * cI - cT);
+
+        /* If the ray was not importance-sampled, we need to take into account the distribution. */
+        if (!sampled)
+        {
+            /* Get the half angle vector's angle with the normal. */
+            float alpha = acos(H * normal);
+
+            /* Compute the Beckmann distribution. */
+            D = exp(-pow(tanf(alpha) / this->roughness, 2.0f));
+        }
+    }
+
+    /* Compute the geometric attenuation term. */
+    float NdV = std::abs(incident * normal);
+    float NdL = std::abs(normal * exitant);
+    float VdH = std::abs(incident * H);
+    float NdH = std::abs(normal * H);
+    float G = std::min(1.0f, std::min(2.0f * NdH * NdV / VdH, 2.0f * NdH * NdL / VdH));
+
+    /* Compute the microfacet normalization term. */
+    float norm = 1.0f / (PI * pow(this->roughness, 2.0f) * pow(NdH, 4.0f));
+
+    /* Compute the reflectance (note the lambertian term cancels a dot product out).
+     * Also note we do NOT use the fresnel term if the ray was importance-sampled,
+     * since we were already weighting the probability of reflection and refraction
+     * with it when sampling the BTDF. */
+    return norm * (D * G) / (NdV);
 }
 
 

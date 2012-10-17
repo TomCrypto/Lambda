@@ -4,7 +4,7 @@
 #pragma pack(1)
 struct CookTorranceDefinition
 {
-    /* The index of the refractive index distribution. */
+    /* The index of the reflectance, and refractive index, distributions. */
     uint32_t reflectance, refractiveIndex;
     /* The roughness of the surface. */
     float roughness;
@@ -46,12 +46,15 @@ Vector CookTorrance::Sample(Vector* origin, Vector incident, Vector normal, floa
 /* This returns the reflectance for an incident and exitant vector. */
 float CookTorrance::Reflectance(Vector incident, Vector exitant, Vector normal, float wavelength, bool sampled)
 {
+    /* Compute the half-angle vector. */
+    Vector H = normalize(exitant - incident);
+
     /* If the ray was not importance-sampled, we need to take into account the distribution. */
     float D = 1.0f;
     if (!sampled)
     {
-        /* Get the exitant vector's angle with the normal. */
-        float alpha = acos(exitant * normal);
+        /* Get the half angle vector's angle with the normal. */
+        float alpha = acos(H * normal);
 
         /* Compute the Beckmann distribution. */
         D = exp(-pow(tanf(alpha) / this->roughness, 2.0f));
@@ -59,9 +62,6 @@ float CookTorrance::Reflectance(Vector incident, Vector exitant, Vector normal, 
 
     /* Align the normal with the incident vector. */
     if (incident * normal > 0.0f) normal = ZERO - normal;
-
-    /* Compute the half-angle vector. */
-    Vector H = normalize(exitant - incident);
 
     /* Compute the refractive indices. */
     float n2 = this->refractiveIndex->Lookup(wavelength);
