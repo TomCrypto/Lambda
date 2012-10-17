@@ -5,7 +5,7 @@ Spectral Path Tracer
 --------------
 
 <p align="center">
-<img src="https://github.com/TomCrypto/Lambda/blob/master/render/frosted_dragon.png?raw=true" alt="Frosted Glass Dragon"/>
+<img src="https://github.com/TomCrypto/Lambda/blob/master/render/ajax_lucy.png?raw=true" alt="Featured Render"/>
 </p>
 
 Lambda is a simple spectral path tracer, written in C++. Some parts of the code are still written in C and don't take advantage of C++ features for the moment. This is a work in progress as many features are still missing, but it is quite functional. Please note Lambda uses C++11 libraries, so you will need a compliant toolchain (for instance, GCC 4.6 and later).
@@ -31,7 +31,9 @@ Lambda is a simple spectral path tracer, written in C++. Some parts of the code 
 
     Ideal refractive (importance-sampled, unfinished)
 
-    Rough refractive (not quite physically correct, unfinished)
+    Rough refractive (importance-sampled)
+
+    Cook-Torrance (importance-sampled, w/ Beckmann)
 
 - Lights
 
@@ -75,3 +77,7 @@ Lambda produces its output in gamma-corrected, tone-mapped PPM format. If you ar
 ## Compatibility
 
 Lambda is compatible with C++11 compliant compilers and uses only standard libraries. As such, it is portable, and has been tested under 64-bit Linux and 64-bit Windows. Note the vector code requires SSE3 instructions, but you really should have those.
+
+## Misc.
+
+Note most implementations in this repository are untested when it comes to physically-based correctness. We try to implement things correctly, but it is very difficult to distinguish "correct" from "almost correct" without reference renders, which we unfortunately do not have.
