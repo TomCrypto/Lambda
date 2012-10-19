@@ -12,3 +12,8 @@ This is the ubiquitous Stanford Dragon using a frosted glass material, with a st
 <img src="https://github.com/TomCrypto/Lambda/blob/master/render/ajax_lucy.png?raw=true" alt="Glass Ajax & Lucy"/>
 </p>
 This is a demonstration of the frosted glass BTDF, with high resolution Lucy and Ajax statues. There were about 1.1 million triangles. This render has been amended once, if you saw the previous one, it was using the unfinished BTDF, this one is now physically correct (the difference is very subtle).
+
+<p align="center">
+<img src="https://github.com/TomCrypto/Lambda/blob/master/render/metal_lucy.png?raw=true" alt="Metallic Lucy"/>
+</p>
+This is a demonstration of the Cook-Torrance BRDF, with a refractive index of 3.85along with a glass cup. The cup shows Fresnel reflection very clearly.
