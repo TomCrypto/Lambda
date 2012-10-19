@@ -16,4 +16,4 @@ This is a demonstration of the frosted glass BTDF, with high resolution Lucy and
 <p align="center">
 <img src="https://github.com/TomCrypto/Lambda/blob/master/render/metal_lucy.png?raw=true" alt="Metallic Lucy"/>
 </p>
-This is a demonstration of the Cook-Torrance BRDF, with a refractive index of 3.85along with a glass cup. The cup shows Fresnel reflection very clearly.
+This is a demonstration of the Cook-Torrance BRDF, with a refractive index of 3.85 along with a glass cup. The cup shows Fresnel reflection very clearly.
