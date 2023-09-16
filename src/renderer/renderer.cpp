@@ -199,6 +199,9 @@ void Renderer::Render(string render, size_t threads)
     /* Set the number of OpenMP threads. If zero was passed, default to the number
      * of execution units available on the system for maximum performance. */
     omp_set_num_threads((threads == 0) ? omp_get_num_procs() : threads);
+    if (threads == 0) {
+        threads = omp_get_num_procs();
+    }
     cout << "[+] Initializing, " << threads << " threads scheduled..." << flush;
 
     /* Now, create PRNG states for each thread. Note the seeds are actually
